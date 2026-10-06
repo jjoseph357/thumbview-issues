@@ -3,162 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thumbview Usage Study — Informed Consent</title>
+    <title>Thumbview Research Study: Participant Consent</title>
     <style>
-        :root {
-            --bg: #ffffff;
-            --text: #1f2328;
-            --muted: #656d76;
-            --border: #d0d7de;
-            --card-bg: #f6f8fa;
-            --accent: #0969da;
-            --warn-bg: #fff8c5;
-            --warn-border: #d4a72c;
-            --warn-text: #594400;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0d1117;
-                --text: #e6edf3;
-                --muted: #8b949e;
-                --border: #30363d;
-                --card-bg: #161b22;
-                --accent: #58a6ff;
-                --warn-bg: #2d2200;
-                --warn-border: #9e6a03;
-                --warn-text: #e3b341;
-            }
-        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
+            color: #24292f;
+            background-color: #ffffff;
             margin: 0;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1.25rem;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: #e6edf3;
+                background-color: #0d1117;
+            }
+            a { color: #58a6ff; }
+            code { background: #161b22; border-color: #30363d; }
+            .subtitle, footer { color: #8b949e; }
         }
         main {
-            max-width: 760px;
+            max-width: 680px;
             margin: 0 auto;
         }
         h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.75rem;
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
         }
-        h2 {
-            font-size: 1.35rem;
-            margin-top: 2rem;
-            margin-bottom: 0.5rem;
+        .subtitle {
+            color: #57606a;
+            font-size: 0.95rem;
+            margin-bottom: 1.75rem;
         }
-        p, li {
+        p {
             font-size: 1rem;
-        }
-        ul {
-            padding-left: 1.5rem;
-        }
-        .callout {
-            border-left: 4px solid var(--accent);
-            background-color: var(--card-bg);
-            padding: 1rem 1.25rem;
-            margin: 1.5rem 0;
-            border-radius: 0 6px 6px 0;
-        }
-        .warning {
-            border-left: 4px solid var(--warn-border);
-            background-color: var(--warn-bg);
-            color: var(--warn-text);
-            padding: 1rem 1.25rem;
-            margin: 1.5rem 0;
-            border-radius: 0 6px 6px 0;
-        }
-        .meta {
-            color: var(--muted);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
+            margin: 1rem 0;
         }
         code {
             font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
             border-radius: 4px;
             padding: 0.15em 0.35em;
             font-size: 0.9em;
         }
+        ul {
+            padding-left: 1.4rem;
+            margin: 0.75rem 0;
+        }
+        li {
+            margin-bottom: 0.35rem;
+        }
         footer {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.9rem;
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: #57606a;
+            border-top: 1px solid #d0d7de;
+            padding-top: 1rem;
         }
     </style>
 </head>
 <body>
 <main>
     <h1>Thumbview Research Study: Participant Consent</h1>
-    <div class="meta">Study Version 1 &bull; Academic Research on Spatial Code Navigation</div>
+    <div class="subtitle">University of Saskatchewan &bull; Department of Computer Science</div>
 
     <p>
-        Researchers are studying how software developers locate, revisit, and navigate files in their codebase using a stable spatial minimap (Thumbview), compared to traditional file switching methods.
+        We are researching how software developers find and revisit code when using a spatial minimap grid instead of traditional tabs and file trees.
     </p>
 
-    <div class="callout">
-        <strong>Participation is completely voluntary.</strong> You can join or leave the study at any time directly within VS Code by running <code>Thumbview: Leave the Research Study</code>. Leaving immediately stops data collection and discards any pending uploads.
-    </div>
-
-    <h2>1. What Data Is Collected</h2>
-    <p>When you opt in and VS Code usage telemetry is enabled, Thumbview records:</p>
-    <ul>
-        <li><strong>Open Latency & Visits:</strong> When Thumbview is opened, the trigger method (F4 shortcut, Command Palette, or tab click), and how long it takes to appear.</li>
-        <li><strong>Target Navigation:</strong> How long it takes to select a file, whether the selection was a direct jump, switch, or tab closure.</li>
-        <li><strong>Interaction Patterns:</strong> Whether you searched, query length, number of search matches, number of tiles hovered, folder drill-ins, and use of keyboard navigation or the magnifier.</li>
-        <li><strong>Spatial Coordinates:</strong> The grid slot (row and column) of the selected tile, and whether the tile remained in the same relative position since you last opened it.</li>
-        <li><strong>Thumbview Actions:</strong> Specific action names performed (e.g. reordering tiles, ignoring files, reflow, toggling layout mode).</li>
-        <li><strong>Navigation Share:</strong> When files are opened via other editor methods (e.g., Quick Open or Explorer) to evaluate the proportion of navigation using spatial maps.</li>
-    </ul>
-
-    <h2>2. What Is Never Collected</h2>
-    <div class="warning">
-        <strong>Strict Privacy Guarantee:</strong>
-        <ul>
-            <li><strong>No file contents or code</strong> are ever read, transmitted, or stored.</li>
-            <li><strong>No file names, folder names, or file paths</strong> are ever collected.</li>
-            <li><strong>No search queries or text typed into editors</strong> is ever collected.</li>
-        </ul>
-    </div>
-
-    <h2>3. How Files Are Identified (Pseudonymous Hashing)</h2>
     <p>
-        Files are referenced only through an irreversible, salted HMAC-SHA256 hash computed locally on your machine:
-        <code>HMAC-SHA256(participant_salt, workspace + relative_path)</code>.
-        The secret salt is stored exclusively on your computer in <code>~/.thumbview/study.json</code> and is never sent to the researchers or database. This allows research analysis to know if the same file was revisited without ever knowing the name or path of that file.
+        If you completed our demographic form, you were given a Participant ID so we can connect your programming background with your navigation patterns. You can enter that ID directly in Thumbview's settings or during the first-time prompt.
     </p>
 
-    <h2>4. Pseudonymity & Server Logs</h2>
     <p>
-        Data collected is <strong>pseudonymous, not anonymous</strong>:
+        <strong>What we collect:</strong>
     </p>
     <ul>
-        <li>Every telemetry batch carries a random UUID participant ID generated for your computer.</li>
-        <li>The backend database host (Supabase) sees your client IP address during HTTPS upload requests.</li>
-        <li>If you choose to complete the pre-study or post-study survey, your participant ID is included in the survey URL so responses can be correlated with usage trends. The survey provider will also see your responses and IP address.</li>
+        <li>When you open Thumbview and how many seconds it takes you to pick a file</li>
+        <li>Which grid slot (row and column) you clicked</li>
+        <li>Tool usage counts, such as search, magnifier preview, and folder drill-downs</li>
+        <li>When you open files via Quick Open or the explorer, so we can measure how often you use spatial navigation versus standard editor tools</li>
     </ul>
 
-    <h2>5. Data Rights & Deletion</h2>
     <p>
-        You can view and copy your participant ID at any time in VS Code via <code>Thumbview: Research Study Info</code>.
-        If you wish to have all your recorded study data deleted from the study database, you can request data deletion by providing your participant ID to the study maintainers.
+        <strong>What we never collect:</strong>
+    </p>
+    <ul>
+        <li>Zero code or file contents</li>
+        <li>Zero file names or folder paths</li>
+        <li>Zero search queries (we only record whether you searched and how many matches appeared)</li>
+    </ul>
+
+    <p>
+        All usage records are uploaded over HTTPS to precision.usask.ca in Canada. Participation is voluntary. You can leave at any time by running <code>Thumbview: Leave the Research Study</code> in VS Code, which stops collection and drops any unsent records immediately.
     </p>
 
-    <h2>6. Contact & Questions</h2>
     <p>
-        For inquiries regarding this study or data deletion requests, please open an issue or contact the maintainers at the <a href="https://github.com/jjoseph357/thumbview-issues">Thumbview Issues Repository</a>.
+        To have your recorded data deleted from our server, send your Participant ID to us by opening an issue at <a href="https://github.com/jjoseph357/thumbview-issues">https://github.com/jjoseph357/thumbview-issues</a>.
     </p>
 
     <footer>
-        Thumbview Research Study &bull; Built for research on spatial developer tooling.
+        Thumbview Research Study &bull; University of Saskatchewan
     </footer>
 </main>
 </body>
